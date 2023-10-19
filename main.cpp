@@ -1,6 +1,6 @@
-#include <iostream>
+#include "Game.h"
 
 int main() {
-  std::cout << "GOTY" << std::endl; 
+  Game game;
   return 0;
 }
