@@ -16,4 +16,8 @@ namespace Entities {
     m_position = position;
     m_sprite.setPosition(m_position);
   }
+
+  sf::Vector2f Entity::getPosition() const {
+    return m_sprite.getPosition();
+  }
 }

@@ -9,13 +9,16 @@ namespace Entities {
       int m_points;
       bool m_isJumping;
       const float m_jumpHeight;
+
+    private:
+      void setup();
+      void handleInput();
+      void update();
     
     public:
       Player();
       ~Player();
-      void setup();
-      void handleInput();
-      void update();
+      void setIsJumping(const bool isJumping);
       void exec();
       void save();
   };

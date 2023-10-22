@@ -2,12 +2,12 @@
 #define GAME_H
 
 #include "GraphicsManager.h"
-#include "Player.h"
+#include "Stage.h"
 
 class Game {
   private:
     Manager::GraphicsManager* m_graphicsManager;
-    Entities::Player player1;
+    Stages::Stage stage1;
   
   public:
     Game();

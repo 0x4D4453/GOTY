@@ -1,4 +1,5 @@
 #include "Player.h"
+
 #include "Constants.h"
 
 #include <cmath>
@@ -8,7 +9,7 @@ namespace Entities {
     : Character()
     , m_points(0)
     , m_isJumping(false)
-    , m_jumpHeight(3.0f)
+    , m_jumpHeight(0.6f)
   {
     setup();
   }
@@ -19,17 +20,21 @@ namespace Entities {
 
   void Player::setup() {  
     setTexture(Constants::PLAYER_TEXTURE);
-    m_sprite.setTextureRect(sf::IntRect(2, 197, 12, 11));
     m_sprite.setScale(sf::Vector2f(4.f, 4.f));
-    m_sprite.setOrigin(12/2, 0);
+    m_sprite.setOrigin(16/2, 0);
+    m_sprite.setPosition(sf::Vector2f(32.f,  0.f));
   } 
+
+  void Player::setIsJumping(const bool isJumping) {
+    m_isJumping = isJumping;
+  }
 
   void Player::handleInput() {
     m_velocity.x = 0.f;
     m_velocity.y += Constants::GRAVITY * m_dt;
 
     using sf::Keyboard;
-
+    
     if (Keyboard::isKeyPressed(Keyboard::A))
       m_velocity.x -= m_speed * m_dt;
     if (Keyboard::isKeyPressed(Keyboard::D))
@@ -53,7 +58,6 @@ namespace Entities {
   void Player::exec() {
     handleInput();
     update();
-    draw();
   }
 
   void Player::save() {

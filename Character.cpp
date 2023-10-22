@@ -20,7 +20,15 @@ namespace Entities {
     m_dt = dt;
   }
 
+  void Character::setVelocity(const sf::Vector2f velocity) {
+    m_velocity = velocity;
+  }
+
   void Character::move() {
     m_sprite.move(m_velocity);
+  }
+
+  void Character::move(const sf::Vector2f movement) {
+    m_sprite.move(movement);
   }
 }

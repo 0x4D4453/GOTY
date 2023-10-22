@@ -18,6 +18,10 @@ const sf::Sprite* Being::getSprite() const {
   return &m_sprite;
 }
 
+const sf::FloatRect Being::getGlobalBounds() const {
+  return m_sprite.getGlobalBounds();
+}
+
 void Being::setTexture(const char* file) {
   if (!m_texture.loadFromFile(file)) 
     std::cout << "Error loading texture " << file << "\n";

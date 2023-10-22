@@ -14,6 +14,7 @@ namespace Entities {
       Entity(sf::Vector2f position);
       ~Entity();
       void setPosition(sf::Vector2f position);
+      sf::Vector2f getPosition() const;
       virtual void save() = 0;
       virtual void exec() = 0;
   };

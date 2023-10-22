@@ -24,6 +24,9 @@ namespace Manager {
       void clear();
       void display();
       void drawBeing(Being* pBeing);
+      void setView();
+      void setViewCenter(float x, float y);
+      const sf::Vector2f getViewSize() const;
   };
 }
 

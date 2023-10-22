@@ -14,10 +14,12 @@ namespace Entities {
     public:
       Character();
       ~Character();
+      static void setDeltaTime(float dt);
+      void setVelocity(const sf::Vector2f velocity);
+      void move();
+      void move(const sf::Vector2f movement);
       virtual void save() = 0;
       virtual void exec() = 0;
-      static void setDeltaTime(float dt);
-      void move();
   };
 }
 

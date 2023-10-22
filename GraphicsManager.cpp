@@ -1,4 +1,5 @@
 #include "GraphicsManager.h"
+
 #include "Being.h"
 #include "Constants.h"
 
@@ -51,5 +52,17 @@ namespace Manager {
 
   void GraphicsManager::drawBeing(Being* pBeing) {
     m_window.draw(*(pBeing->getSprite()));
+  }
+
+  void GraphicsManager::setView() {
+    m_window.setView(m_view);
+  }
+
+  void GraphicsManager::setViewCenter(float x, float y) {
+    m_view.setCenter(sf::Vector2f(x, y));
+  }
+
+  const sf::Vector2f GraphicsManager::getViewSize() const {
+    return m_view.getSize();
   }
 }

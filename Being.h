@@ -15,10 +15,11 @@ class Being {
   public:
     Being();
     ~Being();
-    virtual void exec() = 0;
     const sf::Sprite* getSprite() const;
+    const sf::FloatRect getGlobalBounds() const;
     void setTexture(const char* file);
     void draw();
+    virtual void exec() = 0;
 };
 
 #endif
