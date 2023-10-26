@@ -8,7 +8,11 @@ namespace Entities {
     private:
       int m_points;
       bool m_isJumping;
-      const float m_jumpHeight;
+      bool m_isCharging;
+      float m_jumpHeight;
+      const float m_chargingSpeed;
+      const float m_minJumpHeight;
+      const float m_maxJumpHeight;
 
     private:
       void setup();
@@ -19,6 +23,8 @@ namespace Entities {
       Player();
       ~Player();
       void setIsJumping(const bool isJumping);
+      void chargeJump();
+      void jump();
       void exec();
       void save();
   };
